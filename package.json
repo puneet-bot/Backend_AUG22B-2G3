@@ -1,0 +1,22 @@
+{
+  "name": "backend_aug22b-2g3",
+  "version": "1.0.0",
+  "description": "A web application to create Project Creator",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puneet-bot/Backend_AUG22B-2G3.git"
+  },
+  "author": "Puneet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/puneet-bot/Backend_AUG22B-2G3/issues"
+  },
+  "homepage": "https://github.com/puneet-bot/Backend_AUG22B-2G3#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
