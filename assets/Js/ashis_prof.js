@@ -59,6 +59,8 @@ function changeThemeOrange() {
     logo.style.color = "orangered"
     nameF.style.color = 'orangered'
     project.style.color = 'orangered';
+    document.getElementById('profile-container').style.backgroundColor = 'white';
+    document.body.style.backgroundColor = 'white';
 
 }
 function changeThemeGreen() {
@@ -66,12 +68,19 @@ function changeThemeGreen() {
     logo.style.color = "green"
     nameF.style.color = 'green'
     project.style.color = 'green';
+
+    document.getElementById('profile-container').style.backgroundColor = 'rgba(230, 255, 231,0.5)';
+    document.body.style.backgroundColor = 'rgba(230, 255, 231,0.5)';
+    document.getElementById('profile-name').style.color = "black";
 }
 function changeThemePink() {
     console.log("Pink");
     logo.style.color = "rgb(255, 77, 112)"
     nameF.style.color = 'rgb(255, 77, 112)'
     project.style.color = 'rgb(255, 77, 112)';
+    document.getElementById('profile-container').style.backgroundColor = 'rgb(255, 238, 243 )';
+    document.body.style.backgroundColor = 'rgb(255, 238, 243 )';
+    document.getElementById('profile-name').style.color = "black";
 
 }
 
@@ -83,18 +92,14 @@ function changeThemeDark() {
     nameF.style.color = 'orangered'
     project.style.color = 'orangered';
     document.getElementById('logo').style.color = 'white';
-    document.getElementById('navbar').style.backgroundColor = "rgb(27,28,30)"
-
+    document.getElementById('navbar').style.backgroundColor = "rgb(27,28,30)";
     for(let each of navLinks){
         each.style.color = 'rgb(118,120,121)';
     }
     
     document.getElementById('profile-name').style.color = "white";
-    document.getElementById('profile-details').style.backgroundColor = 'grey'
-
     document.getElementById('profile-container').style.backgroundColor = 'black'
     document.body.style.backgroundColor = 'black'
-    document.getElementById('project-gallery').style.backgroundColor = 'grey';
 }
 
 
