@@ -1,3 +1,5 @@
 module.exports.ashis = function(req,res){
-    res.send("Its me Ashis!!!  😂")
+    res.render('ashis_profile', {
+        title: `Ashis's Profile`,
+    })
 }

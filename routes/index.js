@@ -10,7 +10,7 @@ const ashisController   =   require('../controllers/ashis_controller')
 router.get('/',homeController.home)
 console.log('router on');
 
-router.get('/Ashis', ashisController.ashis);
+router.get('/ashis', ashisController.ashis);
 
 //exporting router as variable to the caller
 module.exports=router;
