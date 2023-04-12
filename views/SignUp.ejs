@@ -1,18 +1,20 @@
 <div class="container">
-    <center><h1>Sign Up Form</h1></center>
-    <br>
-    <br>
-<form action="/new/create" method="POST" class="row g-3 needs-validation" novalidate>
+  <center>
+    <h1>Sign Up Form</h1>
+  </center>
+  <br>
+  <br>
+  <form action="/new/create" method="POST" class="row g-3 needs-validation" novalidate>
     <div class="col-md-6">
       <label for="validationCustom01" class="form-label">First name</label>
-      <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+      <input type="text" name="first_name" class="form-control" id="validationCustom01" value="Mark" required>
       <div class="valid-feedback">
         Looks good!
       </div>
     </div>
     <div class="col-md-6">
       <label for="validationCustom02" class="form-label">Last name</label>
-      <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+      <input type="text" name="last_name" class="form-control" id="validationCustom02" value="Otto" required>
       <div class="valid-feedback">
         Looks good!
       </div>
@@ -21,7 +23,8 @@
       <label for="validationCustomUsername" class="form-label">Email</label>
       <div class="input-group has-validation">
         <span class="input-group-text" id="inputGroupPrepend">@</span>
-        <input type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+        <input type="email" name="email" class="form-control" id="validationCustomUsername"
+          aria-describedby="inputGroupPrepend" required>
         <div class="invalid-feedback">
           Please choose a username.
         </div>
@@ -29,16 +32,30 @@
     </div>
     <div class="col-md-4">
       <label for="validationCustom03" class="form-label">City</label>
-      <input type="text" class="form-control" id="validationCustom03" required>
+      <input type="text" name="city" class="form-control" id="validationCustom03" required>
       <div class="invalid-feedback">
         Please provide a valid city.
       </div>
     </div>
     <div class="col-md-4">
       <label for="validationCustom05" class="form-label">Zip</label>
-      <input type="text" class="form-control" id="validationCustom05" required>
+      <input type="text" name="zip" class="form-control" id="validationCustom05" required>
       <div class="invalid-feedback">
         Please provide a valid zip.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom06" class="form-label">Password</label>
+      <input type="password" name="password" class="form-control" id="validationCustom06" required>
+      <div class="invalid-feedback">
+        Please enter Password
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom07" class="form-label">Confirm Password</label>
+      <input type="password" name="confirm_password" class="form-control" id="validationCustom07" required>
+      <div class="invalid-feedback">
+        Please re-enter Password
       </div>
     </div>
     <div class="col-12">
@@ -53,7 +70,9 @@
       </div>
     </div>
     <div class="col-12">
-      <button class="btn btn-primary" type="submit">Submit form</button>
+      <center>
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </center>
     </div>
   </form>
 </div>
