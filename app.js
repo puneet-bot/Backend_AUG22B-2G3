@@ -5,7 +5,13 @@ const app                   =       express();
 const expressLayouts        =       require('express-ejs-layouts');
 const db                    =       require('./config/mongoose');
 const bodyParser            =       require('body-parser');
+const session               =       require('express-session');
+const mongoStore            =       require('connect-mongo');
+const passport              =       require('passport');
+const passportLocal         =       require('./config/passport-local');
+const cookieParser          =       require('cookie-parser');
 
+app.use(cookieParser());
 app.use(express.urlencoded({extended:false}));
 app.use(expressLayouts);
 // extract style and scripts from sub pages into the layout
@@ -17,7 +23,24 @@ app.set('layout', 'layout');
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+app.use(session({
+    name: 'Project_Creator',
+    // TODO change the secret before deployment in production mode
+    secret: '1234Test',
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: (1000 * 60 * 100)
+    },
+    store: mongoStore.create({
+        mongoUrl: db._connectionString,
+        autoRemove: 'disabled'
+      })
+}));
 
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(passport.setAuthenticatedUser);
 
 //using routes to handle all url traffic
 app.use('/',require('./routes'));
