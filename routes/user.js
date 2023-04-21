@@ -6,6 +6,7 @@ const express=require('express');
 const userController    =   require('../controllers/user');
 router.get('/signin',userController.signIn);
 router.get('/signup',userController.signUp);
+router.use('/project',require('./project'))
 router.post('/create',async function(req,res){
     console.log(req.body);
     // get the sign up data
