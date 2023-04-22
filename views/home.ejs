@@ -1,4 +1,18 @@
 <a href="/new/project">➕ Add a project</a>
 
+<div class="container" style="display: flex;flex-wrap: wrap;">
 
+<%for(project of Project){%>
+    <div class="flex-project-box">
+        <img class="project-box-image" src="<%=project.image%>" alt="Image">
+        <h3><%=project.name%></h3>
+        <span><%=project.category%></span>
+        <button href="<%=project.link%>">Website</button>
+        <button href="<%=project.repo%>">Github Repo</button>
 
+        <%# project %>
+    </div>
+<%}%>
+</div>
+
+<link rel="stylesheet" href="css/home.css">

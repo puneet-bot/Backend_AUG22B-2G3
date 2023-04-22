@@ -10,6 +10,17 @@ const mongoStore            =       require('connect-mongo');
 const passport              =       require('passport');
 const passportLocal         =       require('./config/passport-local');
 const cookieParser          =       require('cookie-parser');
+const sassMiddleware        =       require('node-sass-middleware');
+const path                  =       require('path');
+
+app.use(sassMiddleware({
+    /* Options */
+    src: path.join(__dirname, 'assets', 'scss')
+  , dest: path.join(__dirname, 'assets', 'css')
+  , debug: true
+  , outputStyle: 'extended'
+  , prefix:  '/css'
+}));
 
 app.use(cookieParser());
 app.use(express.urlencoded({extended:false}));
