@@ -13,6 +13,10 @@
             <button>Delete</button>
             <input type="hidden" name="project" value="<%=project._id%>">
         </form>
+        <form action="/func/edit" method="POST">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<%=project.id%>" data-bs-whatever="@mdo">Edit</button>
+            <%- include('edit.ejs') %>
+        </form>
         <%# project %>
     </div>
 <%}%>
