@@ -9,7 +9,10 @@
         <span><%=project.category%></span>
         <button href="<%=project.link%>">Website</button>
         <button href="<%=project.repo%>">Github Repo</button>
-
+        <form method="POST" action="/func/delete">
+            <button>Delete</button>
+            <input type="hidden" name="project" value="<%=project._id%>">
+        </form>
         <%# project %>
     </div>
 <%}%>
