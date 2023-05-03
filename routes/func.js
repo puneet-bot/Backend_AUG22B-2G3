@@ -10,27 +10,38 @@ router.post("/delete", async function (req, res) {
 });
 
 router.post("/edit", async function (req, res) {
-  console.log("req.body: ", req.body);
-  updatedData={
-    name: req.body.project_name,
-  link: req.body.project_link,
-  description: req.body.project_description,
-  image: req.body.project_link1,
-  category: req.body.project_category,
-  repo: req.body.project_repo,
-  }
 
-  let updatedProject = projectModel.findByIdAndUpdate(req.body.project_id, updatedData, { new: true, runValidators: true })
-  .then(project => {
-    if (!project) {
-      console.log(`No project found with ID ${req.body.project_id}`);
-    } else {
-      console.log("Project updated successfully", project);
+
+  if(req.xhr){
+    console.log("req.body: ", req.body);
+    updatedData={
+      name: req.body.project_name,
+    link: req.body.project_link,
+    description: req.body.project_description,
+    image: req.body.project_link1,
+    category: req.body.project_category,
+    repo: req.body.project_repo,
     }
-  })
-  .catch(err => console.log(`Error: ${err}`));
+    let updatedProject = await projectModel.findByIdAndUpdate(req.body.project_id, updatedData, { new: true, runValidators: true })
 
-  return res.redirect("/");
+    // console.log("post-detail",post_detail);
+    return res.status(200).json({
+        data:{
+            project:updatedProject,
+        },
+        message:"Post Created!"
+    })
+}
+  // .then(project => {
+  //   if (!project) {
+  //     console.log(`No project found with ID ${req.body.project_id}`);
+  //   } else {
+  //     console.log("Project updated successfully", project);
+  //   }
+  // })
+  // .catch(err => console.log(`Error: ${err}`));
+
+  // return res.redirect("/");
 });
 
 //exporting router as variable to the caller

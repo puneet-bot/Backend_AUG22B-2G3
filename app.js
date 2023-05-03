@@ -48,7 +48,7 @@ app.use(session({
         autoRemove: 'disabled'
       })
 }));
-
+app.use(express.static('assets'));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);

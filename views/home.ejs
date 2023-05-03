@@ -1,4 +1,5 @@
 <a href="/new/project">➕ Add a project</a>
+<link rel="stylesheet" href="css/home.css">
 
 <div class="container" style="display: flex;flex-wrap: wrap;">
 
@@ -13,13 +14,11 @@
             <button>Delete</button>
             <input type="hidden" name="project" value="<%=project._id%>">
         </form>
-        <form action="/func/edit" method="POST">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<%=project.id%>" data-bs-whatever="@mdo">Edit</button>
             <%- include('edit.ejs') %>
-        </form>
         <%# project %>
     </div>
 <%}%>
 </div>
 
-<link rel="stylesheet" href="css/home.css">
+<script type="application/javascript" src="/js/project-edit-ajax.js"></script>

@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="css/edit.css">
+<link rel="stylesheet" href="/css/edit.css">
 <div class="modal fade" id="exampleModal<%=project.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
       <div class="modal-content">
@@ -7,10 +7,9 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-<%= project %>
 
             <center><h3>Add a new Project</h3></center>
-            <form action="/func/edit" method="POST">
+            <form id="project-form-<%=project.id%>" action="/func/edit" method="POST">
                 <div class="mb-3">
                     <label for="project_name" class="form-label">Project Name</label>
                     <input type="text" name="project_name" class="form-control" id="project_name" placeholder="Facebook clone" value="<%=project.name%>">
@@ -57,7 +56,7 @@
                     <input type="text" value="<%=project.repo%>" class="form-control" name="project_repo" id="github_link" placeholder="www.github.com/facebook.git">
                 </div>
                 <input type="hidden" name="project_id" value="<%=project.id%>">
-            <center><button class="btn btn-primary btn-lg">Edit</button></center>
+            <center><button id="edit-btn_<%=project.id%>" class="btn btn-primary btn-lg" onclick="editProject(this)">Edit</button></center>
         </form>
         </div>
         <div class="modal-footer">
@@ -67,4 +66,4 @@
     </div>
   </div>
 
-  <script src="js/edit.js"></script>
+  <script type="application/javascript" src="/js/edit.js"></script>
