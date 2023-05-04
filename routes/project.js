@@ -8,17 +8,29 @@ const express=require('express');
     })
  })
 
- router.post("/",function(req,res){
+ router.post("/",async function(req,res){
+    ProjectModel.uploadedProjectPath(req,res,async function(err){
+      if(err){
+          return console.log('***MULTER Error',err);
+      }
+      if(req.file){
+          console.log('File ',req.file.filename);
+      }
+      console.log("hello");
     console.log("req: ",req.body);
-   let sampleProject= ProjectModel.create({
+
+   let sampleProject= await ProjectModel.create({
       name:req.body.project_name,
       link:req.body.project_link,
       description:req.body.project_description,
-      image:req.body.project_link1,
+      image:(req.file)?ProjectModel.projectPath+'/'+req.file.filename:req.body.project_link1,
       category:req.body.project_category,
       repo:req.body.project_repo
     })
+
     console.log(sampleProject);
+  })
+
     return res.redirect('/')
  })
 
