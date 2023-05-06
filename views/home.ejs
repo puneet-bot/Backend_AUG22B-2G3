@@ -1,12 +1,24 @@
+<a href="/new/project">➕ Add a project</a>
+<link rel="stylesheet" href="css/home.css">
 
-    <h1>Hello In home Page</h1>
+<div class="container" style="display: flex;flex-wrap: wrap;">
 
-    <%for(var i=0;i<puneet.length;i++){%>
-        <div><%= puneet[i] %></div>
-        <br>
-    <link rel="stylesheet" href="puneet.css">
-        <hr>
-    <%}%>
+<%for(project of Project){%>
+    <div class="flex-project-box">
+        <img class="project-box-image" src="<%=project.image%>" alt="Image">
+        <h3><%=project.name%></h3>
+        <span><%=project.category%></span>
+        <button href="<%=project.link%>">Website</button>
+        <button href="<%=project.repo%>">Github Repo</button>
+        <form method="POST" action="/func/delete">
+            <button>Delete</button>
+            <input type="hidden" name="project" value="<%=project._id%>">
+        </form>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal<%=project.id%>" data-bs-whatever="@mdo">Edit</button>
+            <%- include('edit.ejs') %>
+        <%# project %>
+    </div>
+<%}%>
+</div>
 
-
-
+<script type="application/javascript" src="/js/project-edit-ajax.js"></script>

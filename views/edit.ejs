@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="/css/edit.css">
+<div class="modal fade" id="exampleModal<%=project.id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+            <center><h3>Add a new Project</h3></center>
+            <form id="project-form-<%=project.id%>" action="/func/edit" method="POST">
+                <div class="mb-3">
+                    <label for="project_name" class="form-label">Project Name</label>
+                    <input type="text" name="project_name" class="form-control" id="project_name" placeholder="Facebook clone" value="<%=project.name%>">
+                </div>
+                <div class="mb-3">
+                    <label for="project_link" class="form-label">Project Link</label>
+                    <input type="text" value="<%=project.link%>" class="form-control" name="project_link" id="project_link" placeholder="www.facebook.com">
+                </div>
+                <div class="mb-3">
+                    <label for="project_description" class="form-label">Example textarea</label>
+                    <textarea class="form-control" name="project_description" id="project_description" rows="2">
+                        <%=project.description%>
+                    </textarea>
+                </div>
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="project_name" class="form-label">Image Link</label>
+                                <input type="text" name="project_link1" class="form-control" id="project_name" placeholder="https:www.facebook.com" value="<%=project.image%>">
+                            </div>
+                        </div>
+                        <div class="col">
+                            OR
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">File Upload</label>
+                                <input class="form-control" name="project_link2" type="file" id="formFile">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <label for="exampleDataList" class="form-label">Project Category</label>
+                <input value="<%=project.category%>" class="form-control" name="project_category" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+                <datalist id="datalistOptions">
+                    <option value="Front End">
+                    <option value="Back End">
+                    <option value="Full Stack">
+                    <option value="others">
+                </datalist>
+                <div class="mb-3">
+                    <label for="Github Link" class="form-label">Github Link</label>
+                    <input type="text" value="<%=project.repo%>" class="form-control" name="project_repo" id="github_link" placeholder="www.github.com/facebook.git">
+                </div>
+                <input type="hidden" name="project_id" value="<%=project.id%>">
+            <center><button id="edit-btn_<%=project.id%>" class="btn btn-primary btn-lg" onclick="editProject(this)">Edit</button></center>
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="application/javascript" src="/js/edit.js"></script>
