@@ -8,7 +8,8 @@ const homeController    =   require('../controllers/home');
 router.get('/',homeController.home)
 console.log('router on');
 router.use('/new',require('./user'));
-router.use('/func',require('./func.js'))
+router.use('/func',require('./func.js'));
+router.use('/reset',require('./reset'));
 
 //exporting router as variable to the caller
 module.exports=router;
