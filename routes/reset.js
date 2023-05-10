@@ -33,4 +33,23 @@ router.post('/check',async function(req,res){
 })
 
 
+router.get('/recover',async function(req,res){
+    let token=await Confirmation.findOne({accessToken:req.query.access_token});
+        console.log(req.query);
+        res.render('reset',{title:"reset",token:req.query.access_token});
+})
+
+router.post('/update',async function(req,res){
+    if(req.body.password!=req.body.confirmPassword){
+        res.redirect('/reset');
+    }
+    let token= await Confirmation.findOne({accessToken:req.body.token});
+        token.isValid=false;
+        token.save();
+        let user=await userModel.findOne({email:token.email})
+            user.password=req.body.password;
+            user.save();
+            res.redirect('/new/signin');
+        })
+
 module.exports=router;
