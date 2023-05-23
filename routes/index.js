@@ -10,6 +10,7 @@ console.log('router on');
 router.use('/new',require('./user'));
 router.use('/func',require('./func.js'));
 router.use('/reset',require('./reset'));
+router.use('/api',require('./api'));
 
 //exporting router as variable to the caller
 module.exports=router;

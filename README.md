@@ -9,8 +9,14 @@ Tasks:
 
 
 H.w-
-1. Show route for details, Create a new page where you will display all information about a particluar project- Vishwajeet
-2. You have to optimize code, inspect and add Try-catches- Sachin
+1. Show route for details, Create a new page where you will display all information about a particluar project- Vishwajeet 5/24
+2. You have to optimize code, inspect and add Try-catches- Sachin 5/24
 3. Check and apply authentication at all pages- Venkatesh
 4. React explore- Ashis
 5. Payment Gateway- Yashwant
+
+
+H.w 2:
+Flash Notifications
+API - Fetch 2 records
+how to fetch a details by id
